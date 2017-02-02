@@ -1,0 +1,35 @@
+#:kivy 1.0.9
+#import StackLayout kivy.uix.stacklayout
+
+<Light>:
+    size_hint: None,None
+    size: 30, 30
+    canvas:
+        Rectangle:
+            pos:self.pos
+            size:self.size
+
+<StartScreen>:
+    GridLayout:
+        rows:2
+        orientation: 'vertical'
+        size:root.size
+        StackLayout:
+            id:lightsView
+            orientation: 'lr-tb'
+            Button:
+                text: 'one'
+                size_hint: None,None
+                size:30,30
+            Button:
+                text: 'two'
+                size_hint: None,None
+                size:30,30
+        Button:
+            height: 30
+            text: 'add'
+            on_release: root.add_svetofor()
+
+
+
+
