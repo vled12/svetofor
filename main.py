@@ -12,15 +12,6 @@ class StartScreen(Widget):
     def __init__(self, **kwargs):
         super(StartScreen, self).__init__(**kwargs)
         self.lights = []
-        #svetoforview = SvetoforView()
-        #self.list_item_args_converter = lambda row_index, obj: {'text': obj.name, 'size_hint_y': None, 'height': 45}
-
-
-        #self.svetofor_list_adapter.bind(on_selection_change=svetoforview.svetofor_changed)
-        #self.list_view = ListView(adapter=self.svetofor_list_adapter)
-
-        #self.add_widget(self.list_view)
-        #self.add_widget(svetoforview)
 
         # Clock.schedule_interval(self.update_list_data, 1)
 
