@@ -1,15 +1,20 @@
 #:kivy 1.0.9
-#import StackLayout kivy.uix.stacklayout
 
 <Light>:
-    size_hint: None,None
-    size: 30, 30
-    canvas:
-        Rectangle:
-            pos:self.pos
-            size:self.size
+    size: 120, 75
+    size_hint: None, None
+    rows:3
+    Label:
+        text:str(root.label)
+    Label:
+        text:str(root.time_left)
+        color:root.color
+    Button:
+        text:'upd'
 
 <StartScreen>:
+    lightsView: lightsView
+    entered_address:address
     GridLayout:
         rows:2
         orientation: 'vertical'
@@ -17,18 +22,21 @@
         StackLayout:
             id:lightsView
             orientation: 'lr-tb'
+
+        GridLayout:
+            cols:2
+            size_hint:1,0.2
+            GridLayout:
+                rows:3
+                TextInput:
+                    id:address
+                TextInput:
+                    id:gr_period
+                TextInput:
+                    id:rg_period
             Button:
-                text: 'one'
-                size_hint: None,None
-                size:30,30
-            Button:
-                text: 'two'
-                size_hint: None,None
-                size:30,30
-        Button:
-            height: 30
-            text: 'add'
-            on_release: root.add_svetofor()
+                text: 'add'
+                on_release: root.add_svetofor()
 
 
 
