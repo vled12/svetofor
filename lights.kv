@@ -1,7 +1,7 @@
 #:kivy 1.0.9
 
 <Light>:
-    size: 120, 75
+    size: 120, 100
     size_hint: None, None
     rows:3
     Label:
@@ -10,11 +10,20 @@
         text:str(root.time_left)
         color:root.color
     Button:
-        text:'upd'
+        text:'upd gr'
+        on_press:root.correct_gr()
+    Button:
+        text:'upd rg'
+        on_press:root.correct_rg()
+    Button:
+        text:'delete'
+        on_press:root.die()
 
 <StartScreen>:
     lightsView: lightsView
     entered_address:address
+    gr_period:gr_period
+    red_period:red_period
     GridLayout:
         rows:2
         orientation: 'vertical'
@@ -30,10 +39,13 @@
                 rows:3
                 TextInput:
                     id:address
+                    text:'address'
                 TextInput:
                     id:gr_period
+                    text:'green_period'
                 TextInput:
-                    id:rg_period
+                    id:red_period
+                    text:'red_period'
             Button:
                 text: 'add'
                 on_release: root.add_svetofor()
