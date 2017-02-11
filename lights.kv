@@ -46,9 +46,14 @@
                 TextInput:
                     id:red_period
                     text:'red_period'
-            Button:
-                text: 'add'
-                on_release: root.add_svetofor()
+            GridLayout:
+                rows:2
+                Button:
+                    text: 'add'
+                    on_release: root.add_svetofor()
+                Button:
+                    text: 'save'
+                    on_release: root.save()
 
 
 
