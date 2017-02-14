@@ -18,7 +18,7 @@ class Light(GridLayout):
     color=ListProperty()
     killme=BooleanProperty(False)
     killme2=ObjectProperty(None)
-    def __init__(self, address, red_period=10.0, gr_period=5.0, red2green_fixed=time.time(),**kwargs):
+    def __init__(self, address, red_period=10.0, gr_period=5.0, red2green_fixed=None,**kwargs):
         super(Light,self).__init__(**kwargs)
         self.label=address
         self.light=Svetofor(red_period,gr_period,red2green_fixed)
@@ -63,7 +63,7 @@ class StartScreen(Widget):
         with open("memory",'w+') as memory:
             for light in self.lightsView.children:
                 memory.write(';'.join([light.label,light.light.export()]))
-
+                memory.write('\n')
 class LightsApp(App):
     def build(self):
         return StartScreen()

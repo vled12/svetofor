@@ -5,10 +5,11 @@
 import time, math
 
 class Svetofor():
-    time_left = 0.0
+
 
     def __init__(self, red_interval=5.0, green_interval=10.0, red2green_fixed=time.time()):
-        self.red2green_fixed = red2green_fixed
+        self.time_left = 0.0
+        self.red2green_fixed = red2green_fixed if red2green_fixed else time.time()
         self.red_interval = red_interval
         self.green_interval = green_interval
         self.cycle = self.green_interval + self.red_interval
@@ -25,7 +26,6 @@ class Svetofor():
         self.red2green_fixed = time.time()
 
     def correct_gr(self):
-        self.red2green_fixed = time.time() - self.red_interval
-
+        self.red2green_fixed = time.time() - self.green_interval
     def export(self):
         return ';'.join(map(str,[self.red_interval,self.red_interval,self.red2green_fixed]))
