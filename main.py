@@ -7,7 +7,6 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.properties import StringProperty
 from kivy.properties import ObjectProperty
 from kivy.properties import ListProperty
-from kivy.properties import BooleanProperty
 from svetofor import Svetofor
 
 from kivy.clock import Clock
@@ -16,8 +15,6 @@ class Light(GridLayout):
     label = StringProperty('')
     time_left = StringProperty('')
     color=ListProperty()
-    killme=BooleanProperty(False)
-    killme2=ObjectProperty(None)
     def __init__(self, address, red_period=10.0, gr_period=5.0, red2green_fixed=None,**kwargs):
         super(Light,self).__init__(**kwargs)
         self.label=address
