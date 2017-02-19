@@ -13,7 +13,6 @@ class Svetofor():
         self.red_interval = red_interval
         self.green_interval = green_interval
         self.cycle = self.green_interval + self.red_interval
-        print locals()
 
     def check(self):
         cycles = int(math.floor((time.time() - self.red2green_fixed) / (self.cycle)))

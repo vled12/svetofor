@@ -1,6 +1,7 @@
 import kivy
 import time
 kivy.require('1.1.1')
+__version__ = '0.0.1'
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.uix.gridlayout import GridLayout
@@ -47,7 +48,6 @@ class StartScreen(Widget):
             for item in memory.readlines():
                 data=item.split(';')
                 data[1:]=map(float,data[1:])
-                print data
                 self.lightsView.add_widget(Light(data[0],data[1],data[2],data[3]))
         except: pass
 
