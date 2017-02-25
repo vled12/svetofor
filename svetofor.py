@@ -27,4 +27,4 @@ class Svetofor():
     def correct_gr(self):
         self.red2green_fixed = time.time() - self.green_interval
     def export(self):
-        return ';'.join(map(str,[self.red_interval,self.red_interval,self.red2green_fixed]))
+        return ';'.join(map(str,[self.red_interval,self.green_interval,self.red2green_fixed]))
