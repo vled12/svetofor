@@ -1,8 +1,7 @@
-import kivy
-import time
-kivy.require('1.1.1')
 __version__ = '0.0.1'
+
 from kivy.app import App
+from kivy.core.window import Window
 from kivy.uix.widget import Widget
 from kivy.uix.gridlayout import GridLayout
 from kivy.properties import StringProperty
@@ -43,6 +42,7 @@ class StartScreen(Widget):
         self.gr_period = ObjectProperty()
         self.red_period=ObjectProperty()
         super(StartScreen, self).__init__(**kwargs)
+        Window.softinput_mode='resize'
         try:
             memory=open('memory','r')
             for item in memory.readlines():
